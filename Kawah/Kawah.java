@@ -1,97 +1,73 @@
-class FreshTastySquash {
+class Silandi {
+    // Atribut
     int noKios;
     String namaPenjual;
     String noTelepon;
-    String[] menuMocktail;
-    String[] menuSquash;
-    String[] menuPopIce;
-    String[] menuLainnya;
-    int[] hargaMocktail;
-    int[] hargaSquash;
-    int[] hargaPopIce;
-    int[] hargaLainnya;
-    
-    // Constructor yang diperbaiki - urutan parameter harus sesuai
-    FreshTastySquash(int noKios, String namaPenjual, String noTelepon,
-                     String[] menuMocktail, int[] hargaMocktail,
-                     String[] menuSquash, int[] hargaSquash,
-                     String[] menuPopIce, int[] hargaPopIce,
-                     String[] menuLainnya, int[] hargaLainnya) {
+    String[] menu;
+    int[] harga;
+    String[] tambahan;
+    int[] hargaTambahan;
+
+    // Konstruktor
+    Silandi(int noKios, String namaPenjual, String noTelepon,
+            String[] menu, int[] harga,
+            String[] tambahan, int[] hargaTambahan) {
         this.noKios = noKios;
         this.namaPenjual = namaPenjual;
         this.noTelepon = noTelepon;
-        this.menuMocktail = menuMocktail;
-        this.hargaMocktail = hargaMocktail;
-        this.menuSquash = menuSquash;
-        this.hargaSquash = hargaSquash;
-        this.menuPopIce = menuPopIce;
-        this.hargaPopIce = hargaPopIce;
-        this.menuLainnya = menuLainnya;
-        this.hargaLainnya = hargaLainnya;
+        this.menu = menu;
+        this.harga = harga;
+        this.tambahan = tambahan;
+        this.hargaTambahan = hargaTambahan;
     }
-    
+
     void tampilkanInfo() {
-        System.out.println("=== Informasi Kios Fresh & Tasty Squash ===");
-        System.out.println("No Kios    : " + noKios);
+        System.out.println("=================================");
+        System.out.println("     INFORMASI KIOS SILANDI    ");
+        System.out.println("=================================");
+        System.out.println("No Kios     : " + noKios);
         System.out.println("Nama Penjual: " + namaPenjual);
-        System.out.println("No Telepon : " + noTelepon);
+        System.out.println("No Telepon  : " + noTelepon);
+        System.out.println("=================================\n");
     }
-    
-    void tampilkanMenuKategori(String kategori, String[] menu, int[] harga) {
-        System.out.println("\n--- " + kategori + " ---");
+
+    void tampilkanMenu() {
+        System.out.println("========== DAFTAR MENU ==========");
         for (int i = 0; i < menu.length; i++) {
-            System.out.println(menu[i] + " - Rp" + String.format("%,d", harga[i]));
+            System.out.printf("%-20s Rp%,d%n", menu[i], harga[i]);
         }
+        System.out.println("=================================\n");
     }
-    
-    void tampilkanSemuaMenu() {
-        tampilkanMenuKategori("MOCKTAIL", menuMocktail, hargaMocktail);
-        tampilkanMenuKategori("SQUASH", menuSquash, hargaSquash);
-        tampilkanMenuKategori("POP ICE", menuPopIce, hargaPopIce);
-        tampilkanMenuKategori("LAINNYA", menuLainnya, hargaLainnya);
+
+    void tampilkanTambahan() {
+        System.out.println("========= MENU TAMBAHAN =========");
+        for (int i = 0; i < tambahan.length; i++) {
+            System.out.printf("%-20s Rp%,d%n", tambahan[i], hargaTambahan[i]);
+        }
+        System.out.println("=================================");
     }
 }
 
 public class Kawah {
     public static void main(String[] args) {
-        // Kategori Mocktail
-        String[] mocktail = {"Fruit Punch Mocktail", "Rainbow Mocktail", "Sweet Sunrise Mocktail"};
-        int[] hargaMocktail = {8000, 8000, 8000};
-        
-        // Kategori Squash
-        String[] squash = {"Strawberry Squash", "Cocopandan Squash", "Melon Squash"};
-        int[] hargaSquash = {5000, 5000, 8000};
-        
-        // Kategori Pop Ice
-        String[] popIce = {"Pop Ice Strawberry", "Pop Ice Melon", "Pop Ice Mangga"};
-        int[] hargaPopIce = {5000, 5000, 5000};
-        
-        // Kategori Lainnya
-        String[] lainnya = {"Kopi Kapal Api"};
-        int[] hargaLainnya = {5000};
-        
-        // PERBAIKAN: Membuat objek dengan urutan parameter yang BENAR
-        FreshTastySquash kios1 = new FreshTastySquash(
-            1,                    // noKios
-            "Didin",              // namaPenjual  
-            "0819 6190 0982",     // noTelepon
-            mocktail,             // menuMocktail
-            hargaMocktail,        // hargaMocktail
-            squash,               // menuSquash
-            hargaSquash,          // hargaSquash
-            popIce,               // menuPopIce
-            hargaPopIce,          // hargaPopIce
-            lainnya,              // menuLainnya
-            hargaLainnya          // hargaLainnya
+        String[] menu = {"Paket Nasi Telor", "Paket Nasi Ayam", "Paket Nasi Ikan"};
+        int[] harga = {10000, 13000, 18000};
+
+        String[] tambahan = {"Tahu/Tempe", "Telor"};
+        int[] hargaTambahan = {2000, 2000};
+
+        Silandi kios8 = new Silandi(
+            8,
+            "Ibu Namira",
+            "08561081638",
+            menu,
+            harga,
+            tambahan,
+            hargaTambahan
         );
 
-        // Menampilkan informasi dan menu
-        kios1.tampilkanInfo();
-        kios1.tampilkanSemuaMenu();
-        
-        // Contoh tampilan per kategori
-        System.out.println("\n" + "=".repeat(40));
-        System.out.println("CONTOH TAMPILAN PER KATEGORI:");
-        kios1.tampilkanMenuKategori("MOCKTAIL FAVORIT", mocktail, hargaMocktail);
+        kios8.tampilkanInfo();
+        kios8.tampilkanMenu();
+        kios8.tampilkanTambahan();
     }
 }
