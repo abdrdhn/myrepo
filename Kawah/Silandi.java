@@ -1,5 +1,5 @@
 class Kios {
-    // Atribut lama
+    // Atribut
     int noKios;
     String namaPenjual;
     String noTelepon;
@@ -7,19 +7,11 @@ class Kios {
     int[] harga;
     String[] tambahan;
     int[] hargaTambahan;
-    String lokasi;
-    String jamBuka;
-    String jamTutup;
-    String metodePembayaran;
-    String hariOperasional;
-    int jumlahKaryawan;
 
     // Konstruktor
     Kios(int noKios, String namaPenjual, String noTelepon,
          String[] menu, int[] harga,
-         String[] tambahan, int[] hargaTambahan,
-         String lokasi, String jamBuka, String jamTutup,
-         String metodePembayaran, String hariOperasional, int jumlahKaryawan) {
+         String[] tambahan, int[] hargaTambahan) {
         this.noKios = noKios;
         this.namaPenjual = namaPenjual;
         this.noTelepon = noTelepon;
@@ -27,26 +19,15 @@ class Kios {
         this.harga = harga;
         this.tambahan = tambahan;
         this.hargaTambahan = hargaTambahan;
-        this.lokasi = lokasi;
-        this.jamBuka = jamBuka;
-        this.jamTutup = jamTutup;
-        this.metodePembayaran = metodePembayaran;
-        this.hariOperasional = hariOperasional;
-        this.jumlahKaryawan = jumlahKaryawan;
     }
 
     void tampilkanInfo() {
         System.out.println("=================================");
-        System.out.println("     INFORMASI KIOS SILANDI      ");
+        System.out.println("     INFORMASI KIOS SILANDI    ");
         System.out.println("=================================");
-        System.out.println("No Kios          : " + noKios);
-        System.out.println("Nama Penjual     : " + namaPenjual);
-        System.out.println("No Telepon       : " + noTelepon);
-        System.out.println("Lokasi           : " + lokasi);
-        System.out.println("Jam Operasional  : " + jamBuka + " - " + jamTutup);
-        System.out.println("Hari Operasional : " + hariOperasional);
-        System.out.println("Metode Pembayaran: " + metodePembayaran);
-        System.out.println("Jumlah Karyawan  : " + jumlahKaryawan);
+        System.out.println("No Kios     : " + noKios);
+        System.out.println("Nama Penjual: " + namaPenjual);
+        System.out.println("No Telepon  : " + noTelepon);
         System.out.println("=================================\n");
     }
 
@@ -82,13 +63,7 @@ public class Silandi {
             menu,
             harga,
             tambahan,
-            hargaTambahan,
-            "Sebelah Barat Kantin",   // lokasi
-            "08:00",                 // jam buka
-            "16:00",                 // jam tutup
-            "Cash, QRIS",            // metode pembayaran
-            "Senin - Jumat",         // hari operasional
-            2                        // jumlah karyawan
+            hargaTambahan
         );
 
         kios8.tampilkanInfo();
