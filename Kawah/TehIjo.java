@@ -35,7 +35,7 @@ class Kios {
     }
    
     void tampilkanInfo() {
-        System.out.println("=== FreshTastySquash ===");
+        System.out.println("=== Fresh Tasty Squash ===");
         System.out.println("No Kios    : " + noKios);
         System.out.println("Nama Penjual: " + namaPenjual);
         System.out.println("No Telepon : " + noTelepon);
@@ -98,4 +98,5 @@ public class TehIjo {
         kios1.tampilkanSemuaMenu();
 
     }
+
 }
